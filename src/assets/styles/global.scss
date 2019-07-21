@@ -1,0 +1,45 @@
+@import 'reset.scss';
+
+$fontSize: 37.5;
+@function px2rem($px) {
+    @return ($px / $fontSize) + rem;
+}
+
+@mixin center() {
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+
+.icon{
+    color: #013233;
+    font-size: 20px;
+}
+
+.slide-down-enter,
+.slide-down-leave-to {
+    transform: translate3d(0, -100%, 0)
+}
+
+.slide-down-enter-to,
+.slide-down-leave,
+.slide-up-enter-to,
+.slide-up-leave{
+    transform: translate3d(0, 0, 0)
+}
+
+.slide-down-enter-active,
+.slide-down-leave-active,
+.slide-up-enter-active,
+.slide-up-leave-active{
+    transition: all .5s linear;
+}
+
+
+
+.slide-up-enter,
+.slide-up-leave-to {
+    transform: translate3d(0, 100%, 0)
+}
+
+
