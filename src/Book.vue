@@ -1,7 +1,6 @@
 <template>
 <div class="book">
-    <title-bar
-    :ifTitleAndMenuShow="ifTitleAndMenuShow"></title-bar>
+    <TitleBar :ifTitleAndMenuShow="ifTitleAndMenuShow"></TitleBar>
 
     <div class="read-wrapper">
         <div id="read"></div>
@@ -11,8 +10,7 @@
             <div class="right" @click="nextPage()"></div>
         </div>
     </div>
-    <menu-bar
-    :ifTitleAndMenuShow="ifTitleAndMenuShow"></menu-bar>
+    <MenuBar :ifTitleAndMenuShow="ifTitleAndMenuShow"></MenuBar>
 </div>
 </template>
 
@@ -29,7 +27,7 @@ const DOWNLOAD_URL = '/static/三体.epub'
 //全局化
 
 export default {
-    components:{
+    components: {
         TitleBar,
         MenuBar
     },
@@ -114,8 +112,6 @@ export default {
             }
         }
     }
-
-    
 
 }
 </style>
