@@ -1,23 +1,7 @@
 <template>
 <div class="book">
-    <transition name="slide-down">
-        <div class="title-wrapper" v-show="ifTitleAndMenuShow">
-            <div class="left">
-                <span class="icon-back icon"></span>
-            </div>
-            <div class="right">
-                <div class="icon-wrapper">
-                    <span class="icon-cart icon">买</span>
-                </div>
-                <div class="icon-wrapper">
-                    <span class="icon-person icon"></span>
-                </div>
-                <div class="icon-wrapper">
-                    <span class="icon-more icon"></span>
-                </div>
-            </div>
-        </div>
-    </transition>
+    <title-bar
+    :ifTitleAndMenuShow="ifTitleAndMenuShow"></title-bar>
 
     <div class="read-wrapper">
         <div id="read"></div>
@@ -27,26 +11,15 @@
             <div class="right" @click="nextPage()"></div>
         </div>
     </div>
-    <transition name="slide-up">
-        <div class="menu-wrapper" v-show="ifTitleAndMenuShow">
-            <div class="icon-wrapper">
-                <span class="icon-menu icon"></span>
-            </div>
-            <div class="icon-wrapper">
-                <span class="icon-progress icon"></span>
-            </div>
-            <div class="icon-wrapper">
-                <span class="icon-bright icon"></span>
-            </div>
-            <div class="icon-wrapper">
-                <span class="icon-a icon">A</span>
-            </div>
-        </div>
-    </transition>
+    <menu-bar
+    :ifTitleAndMenuShow="ifTitleAndMenuShow"></menu-bar>
 </div>
 </template>
 
 <script>
+import TitleBar from '@/components/TitleBar'
+import MenuBar from '@/components/MenuBar'
+
 //导入epubjs库
 import Epub from 'epubjs'
 //传递一个书的路径 后期会放在服务器
@@ -56,6 +29,10 @@ const DOWNLOAD_URL = '/static/三体.epub'
 //全局化
 
 export default {
+    components:{
+        TitleBar,
+        MenuBar
+    },
     data() {
         return {
             ifTitleAndMenuShow: false
@@ -138,65 +115,7 @@ export default {
         }
     }
 
-    .menu-wrapper {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: 101;
-        width: 100%;
-        height: px2rem(48);
-        background: white;
-        display: flex;
-        box-shadow: 0 px2rem(-5) px2rem(5) rgba(0, 0, 0, 0.15);
+    
 
-        .icon-wrapper {
-            flex: 1;
-            @include center;
-
-            .icon-progress {
-                font-size: px2rem(24);
-            }
-
-            .icon-bright {
-                font-size: px2rem(24);
-            }
-        }
-
-    }
-
-    .title-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 101;
-        width: 100%;
-        height: px2rem(48);
-        background: white;
-        display: flex;
-        box-shadow: 0 px2rem(5) px2rem(5) rgba(0, 0, 0, 0.15);
-
-        .left {
-            flex: 0 0 px2rem(50);
-            @include center;
-
-        }
-
-        .right {
-            display: flex;
-            flex: 1;
-            justify-content: flex-end;
-
-            .icon-wrapper {
-                flex: 0 0 px2rem(40);
-                @include center;
-
-                .icon-cart {
-                    font-size: px2rem(22);
-                }
-
-            }
-        }
-
-    }
 }
 </style>
