@@ -10,7 +10,7 @@
             <div class="right" @click="nextPage()"></div>
         </div>
     </div>
-    <MenuBar :ifTitleAndMenuShow="ifTitleAndMenuShow"></MenuBar>
+    <MenuBar :ifTitleAndMenuShow="ifTitleAndMenuShow" :fontSizeList="fontSizeList" :defaultfontSize="defaultfontSize" ref="menuBar"></MenuBar>
 </div>
 </template>
 
@@ -33,12 +33,39 @@ export default {
     },
     data() {
         return {
-            ifTitleAndMenuShow: false
+            ifTitleAndMenuShow: false,
+            fontSizeList: [{
+                    fontSize: 12
+                },
+                {
+                    fontSize: 14
+                },
+                {
+                    fontSize: 16
+                },
+                {
+                    fontSize: 18
+                },
+                {
+                    fontSize: 20
+                },
+                {
+                    fontSize: 22
+                },
+                {
+                    fontSize: 24
+                },
+            ],
+            defaultfontSize: 16
         }
     },
     methods: {
         toggleTitleAndMenu() {
             this.ifTitleAndMenuShow = !this.ifTitleAndMenuShow
+            if (!this.ifTitleAndMenuShow) {
+                this.$refs.menuBar.hideSetting()
+
+            }
         },
         //上一页
         prevPage() {

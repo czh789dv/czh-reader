@@ -39,7 +39,7 @@ $fontSize: 37.5;
 
 .slide-up-enter,
 .slide-up-leave-to {
-    transform: translate3d(0, 100%, 0)
+    transform: translate3d(0, px2rem(108), 0)
 }
 
 
