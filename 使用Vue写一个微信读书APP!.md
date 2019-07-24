@@ -43,7 +43,7 @@
    vue init webpack czh-reader //czh-reader是本项目名称
    ```
 
-3. 进入项目目录 输入
+3.  进入项目目录 输入
 
    ```cmd
    npm run dev
@@ -67,12 +67,12 @@
    import '@/assets/styles/icon.css'
    ```
 
-4. 安装依赖包
+ 4. 安装依赖包
 
-   ```cmd
-   npm install node-sass sass-loader --save  //安装sass依赖包
-   npm install epubjs --save //安装epub电子书依赖包
-   ```
+    ```cmd
+    npm install node-sass sass-loader --save  //安装sass依赖包
+    npm install epubjs --save //安装epub电子书依赖包
+    ```
 
 5. 视口设置  
 
@@ -103,7 +103,7 @@
 
    然后字体最大设置为50
 
-   ![微信截图_20190718130705](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190718130705.png)
+   ![微信截图_20190718130705](使用Vue写一个微信读书APP!.assets/微信截图_20190718130705.png)
 
 7. reset.sass和global.sass 设置
 
@@ -141,7 +141,6 @@
            align-items: center
        }
    ```
-
 ```
    
 **在Vue中导入样式**
@@ -150,14 +149,14 @@
    
    ```js
    import '@/assets/styles/global.scss'
-
 ```
 
 刷新一下页面  样式就全部改变了
 
-![微信截图_20190718141924](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190718141924.png)
+![微信截图_20190718141924](使用Vue写一个微信读书APP!.assets/微信截图_20190718141924.png)
 
    
+
 
 
 
@@ -169,7 +168,7 @@
 
 ### 3.1 EPUB基本介绍
 
-![微信截图_20190718175317](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190718175317.png)
+![微信截图_20190718175317](使用Vue写一个微信读书APP!.assets/微信截图_20190718175317.png)
 
 ### 3.2 电子书解析和渲染
 
@@ -221,7 +220,6 @@ export default {
 @import 'assets/styles/global.scss'
 </style>
 
-
 ```
 
 然后在router/index.js中修改如下
@@ -238,12 +236,11 @@ routes: [
       component: Book
     }
   ]
-
 ```
 
 现在 打开网页 就可以看到电子书了
 
-![微信截图_20190718185110](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190718185110.png)
+![微信截图_20190718185110](使用Vue写一个微信读书APP!.assets/微信截图_20190718185110.png)
 
 ### 3.3 翻页功能
 
@@ -262,7 +259,6 @@ routes: [
         </div>
     </div>
 </div>
-
 ```
 
 修改Book.vue 的CSS部分
@@ -290,12 +286,11 @@ routes: [
             .center{
                 flex: 1;
             }}}}
-
 ```
 
 这里分别在左中右加入背景色我们先看一下效果
 
-![微信截图_20190719103910](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190719103910.png)
+![微信截图_20190719103910](使用Vue写一个微信读书APP!.assets/微信截图_20190719103910.png)
 
 浮层OK  接下来给浮层添加点击事件
 
@@ -314,12 +309,11 @@ routes: [
                 this.rendition.next()
             }
         },
-
 ```
 
 再刷新一下 点击 左右2边就可以实现翻页了
 
-![微信截图_20190719104304](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190719104304.png)
+![微信截图_20190719104304](使用Vue写一个微信读书APP!.assets/微信截图_20190719104304.png)
 
 
 
@@ -349,12 +343,11 @@ routes: [
     </div>
 
     <div class="read-wrapper">
-
 ```
 
 给了左边 右边 2个区域  左边 放置返回/退出键  右边放置购物车 个人中心 和其他设置
 
-![微信截图_20190721101834](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190721101834.png)
+![微信截图_20190721101834](使用Vue写一个微信读书APP!.assets/微信截图_20190721101834.png)
 
 接下来 写标题栏的样式
 
@@ -386,7 +379,6 @@ routes: [
                 .icon-cart {
                     font-size: px2rem(22);
                 } }} }
-
 ```
 
 首先 他是一个相对定位 漂浮在最上层 Z-index比翻页功能要高
@@ -395,7 +387,7 @@ routes: [
 
 引入之前写好的全局居中
 
-![微信截图_20190721105118](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190721105118.png)
+![微信截图_20190721105118](使用Vue写一个微信读书APP!.assets/微信截图_20190721105118.png)
 
 标题栏 的样式就这样写好了 
 
@@ -418,7 +410,6 @@ HTML部分
             <span class="icon-a icon">A</span>
         </div>
     </div>
-
 ```
 
 CSS部分
@@ -445,12 +436,11 @@ CSS部分
             }
         }
     }
-
 ```
 
 基本上没有什么变化 ,就是将top0改成了buttom0 阴影部分为-5个像素
 
-![微信截图_20190721103431](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190721103431.png)
+![微信截图_20190721103431](使用Vue写一个微信读书APP!.assets/微信截图_20190721103431.png)
 
 
 
@@ -465,7 +455,6 @@ CSS部分
     </div>
     <div class="menu-wrapper" v-show="ifTitleAndMenuShow">
     </div>
-
 ```
 
 然后添加一个data   ,默认返回值false
@@ -477,7 +466,6 @@ export default {
             ifTitleAndMenuShow: false
         }
     },
-
 ```
 
 接下来在mask的center绑定一个方法
@@ -488,7 +476,6 @@ export default {
             <div class="center" @click="toggleTitleAndMenu"></div>
             <div class="right" @click="nextPage()"></div>
         </div>
-
 ```
 
 定义这个方法 ,直接取反即可
@@ -498,18 +485,17 @@ export default {
         toggleTitleAndMenu() {
             this.ifTitleAndMenuShow = !this.ifTitleAndMenuShow
         },
-
 ```
 
 好了 我们来点击一下试试效果
 
-![1](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/1-1563680763969.gif)
+![1](使用Vue写一个微信读书APP!.assets/1-1563680763969.gif)
 
 这里有点突兀.所以我们需要添加一下过渡动画
 
 以下是VUE官方给出的过渡动画说明
 
-![微信截图_20190721112719](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190721112719.png)
+![微信截图_20190721112719](使用Vue写一个微信读书APP!.assets/微信截图_20190721112719.png)
 
 进入和离开都有3个阶段 Vue能够自动给你的标签添加class来执行 我们只需要写好样式即可
 
@@ -519,7 +505,6 @@ export default {
 <transition name="slide-down">
     <div class="title-wrapper" v-show="ifTitleAndMenuShow">
     </div></transition>
-
 ```
 
 接下来写样式
@@ -546,14 +531,13 @@ export default {
             transition: all .5s linear;
         }
     }
-
 ```
 
 enter和leave其中2条一样的 可以简写到一条里面去 
 
 加&符把动画和title-wrapper设置为同级的
 
-![GIF](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/GIF.gif)
+![GIF](使用Vue写一个微信读书APP!.assets/GIF.gif)
 
 接下来 写下面的菜单栏
 
@@ -561,7 +545,6 @@ enter和leave其中2条一样的 可以简写到一条里面去
 <transition name="slide-up">
     <div class="menu-wrapper" v-show="ifTitleAndMenuShow">
     </div></transition>
-
 ```
 
 样式和前面基本一致
@@ -585,12 +568,11 @@ enter和leave其中2条一样的 可以简写到一条里面去
         }
 
     }
-
 ```
 
 看一下效果
 
-![11](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/11.gif)
+![11](使用Vue写一个微信读书APP!.assets/11.gif)
 
 
 
@@ -632,7 +614,6 @@ VUE很强大的地方就是组件,
 .slide-up-leave-active{
     transition: all .5s linear;
 }
-
 ```
 
 合并之后 只剩这些  之后可以直接**对代码进行复用**
@@ -715,7 +696,6 @@ export default {
 
 }
 </style>
-
 
 ```
 
@@ -809,7 +789,6 @@ export default {
 }
 </style>
 
-
 ```
 
 注意 我们需要在子组件里添加props 来接受父组件的参数
@@ -837,7 +816,6 @@ export default {
         TitleBar,
         MenuBar
     },
-
 ```
 
 导入 并且注册组件 
@@ -884,7 +862,6 @@ data() {
 
         .setting-font-size {}
     }
-
 ```
 
 我们还需要在A 那里添加一个点击事件
@@ -894,7 +871,6 @@ data() {
                 <span class="icon-a icon" @click="ShowSetting()">A</span>
             </div>
         </div>
-
 ```
 
 对应添加2个方法  一个对应显示 一个对应隐藏(后面有用)
@@ -908,7 +884,6 @@ methods: {
             this.ifSettingShow=false
         }
     },
-
 ```
 
 接下来修改Book.vue里的toggleTitleAndMenu方法
@@ -923,7 +898,6 @@ toggleTitleAndMenu() {
 
             }
         },
-
 ```
 
 如果标题和菜单栏为false,那么久隐藏menubar的setting
@@ -941,12 +915,11 @@ toggleTitleAndMenu() {
  &.hide-box-shadow{
             box-shadow: none
         }}
-
 ```
 
 双向帮定   最后在CSS中 .menu-wrapper下加入样式
 
-![12](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/12.gif)
+![12](使用Vue写一个微信读书APP!.assets/12.gif)
 
 继续写字体选项的样式
 
@@ -966,7 +939,6 @@ fontSizeList: [
         { fontSize: 24 }
       ],
       defaultFontSize: 16,}
-
 ```
 
 修改MenuBar.vue 的html部分  
@@ -992,7 +964,6 @@ fontSizeList: [
             </div>
         </div>
     </transition>
-
 ```
 
 CSS部分
@@ -1082,10 +1053,9 @@ CSS部分
             }
         }
     }
-
 ```
 
-![微信截图_20190722162935](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190722162935.png)
+![微信截图_20190722162935](使用Vue写一个微信读书APP!.assets/微信截图_20190722162935.png)
 
 字体更改样式部分就完成了
 
@@ -1093,7 +1063,7 @@ CSS部分
 
 ### 3.8 字体更改事件
 
-![ziti](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/ziti.gif)
+![ziti](使用Vue写一个微信读书APP!.assets/ziti.gif)
 
 
 
@@ -1123,7 +1093,6 @@ CSS部分
                 }
             ],
             defaultfontSize: 16,
-
 ```
 
 默认的为16;
@@ -1138,7 +1107,6 @@ setFontSize(fontSize) {
                 this.themes.fontSize(fontSize + "px");
             }
         },
-
 ```
 
 在渲染电子书中插入
@@ -1147,14 +1115,12 @@ setFontSize(fontSize) {
 showEpub() {
     //设置默认字体
     this.setFontSize(this.defaultfontSize);
-
 ```
 
 最后 我们需要把这些都传递给组件;
 
 ```html
 <MenuBar :ifTitleAndMenuShow="ifTitleAndMenuShow" :fontSizeList="fontSizeList" :defaultfontSize="defaultfontSize" @setFontSize="setFontSize" 
-
 ```
 
 同时在组件里 就需要去接收
@@ -1163,7 +1129,6 @@ showEpub() {
  props: {
      fontSizeList: Array,
       defaultfontSize: Number,
-
 ```
 
 接收一个列表 和一个数字
@@ -1172,7 +1137,6 @@ showEpub() {
 
 ```html
  <div class="select-wrapper" v-for="(item,index) in fontSizeList" :key="index" @click="setFontSize(item.fontSize)">
-
 ```
 
 添加一个方法;
@@ -1182,7 +1146,6 @@ showEpub() {
         setFontSize(fontSize){
             this.$emit('setFontSize',fontSize)
         },
-
 ```
 
 在子组件里操作父组件的方法 需要使用$emit
@@ -1199,7 +1162,7 @@ showEpub() {
 
 ### 3.9主题设置
 
-![zhuti](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/zhuti.gif)
+![zhuti](使用Vue写一个微信读书APP!.assets/zhuti.gif)
 
 主题设置和字体设置比较类似
 
@@ -1241,7 +1204,6 @@ themeList: [{
             }, ],
             defaultTheme: 0
         };
-
 ```
 
 主题需要先注册再使用 我们写2个方法
@@ -1257,7 +1219,6 @@ methods: {
                 this.themes.register(theme.name, theme.style)
             })
         },
-
 ```
 
 设置主题 是用下标去选择主题 然后让默认的主题等于现在的主题
@@ -1269,7 +1230,6 @@ showEpub() {//注册主题
             this.registerTheme()
             //默认样式
             this.setTheme(this.defaultTheme)
-
 ```
 
 最后把所有的东西都传递给子组件
@@ -1280,7 +1240,6 @@ showEpub() {//注册主题
     :defaultTheme="defaultTheme"
     @setTheme="setTheme"
     ref="menuBar"></MenuBar>
-
 ```
 
 接下来我们写子组件
@@ -1296,7 +1255,6 @@ showEpub() {//注册主题
                     <div class="text" :class="{'selected': index === defaultTheme}">{{item.name}}</div>
                 </div>
             </div>
-
 ```
 
 showTag  判断这个标签是否显示和隐藏
@@ -1310,7 +1268,6 @@ showTag  判断这个标签是否显示和隐藏
             <div class="icon-wrapper">
                 <span class="icon-a icon" @click="ShowSetting(0)">A</span>
             </div>
-
 ```
 
 ```js
@@ -1320,7 +1277,6 @@ data() { showTag: 0
             this.ifSettingShow = true
             this.showTag=tag
         },
-
 ```
 
 preview绑定的style是 直接把主题的背景颜色拿出来使用 
@@ -1338,7 +1294,6 @@ setTheme(index){
             this.$emit('setTheme', index)
 
         },
-
 ```
 
 最后加上CSS即可
@@ -1375,14 +1330,13 @@ setTheme(index){
                 }
             }
         }
-
 ```
 
 
 
 ### 3.10 阅读进度
 
-![jindutiao](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/jindutiao.gif)
+![jindutiao](使用Vue写一个微信读书APP!.assets/jindutiao.gif)
 
 进度条的HTML部分
 
@@ -1398,14 +1352,12 @@ setTheme(index){
                     </span>
                 </div>
             </div>
-
 ```
 
 在前面同样添加一个点击事件 
 
 ```html
 <span class="icon-progress icon" @click="ShowSetting(2)"></span>
-
 ```
 
 样式部分
@@ -1451,7 +1403,6 @@ setTheme(index){
                     }
                 }
             }
-
 ```
 
 同样 在Book.vue中 要获取电子书的location
@@ -1489,7 +1440,6 @@ showEpub() {
         }
     
             
-
 ```
 
 然后传递给menubar
@@ -1500,7 +1450,7 @@ showEpub() {
 
 ### 3.11 目录功能
 
-![mulu](%E4%BD%BF%E7%94%A8Vue%E5%86%99%E4%B8%80%E4%B8%AA%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6APP!.assets/mulu.gif)
+![mulu](使用Vue写一个微信读书APP!.assets/mulu.gif)
 
 目录功能主要使用book的navigation
 
@@ -1520,7 +1470,6 @@ showEpub() {
                 //存储到本地变量
                 this.bookAvailable=true
             })
-
 ```
 
 然后写2个方法  jumpto就是跳转到目录地址  隐藏菜单栏和设置栏就是 跳转的时候隐藏
@@ -1538,7 +1487,6 @@ showEpub() {
             //隐藏目录
             this.$refs.menuBar.hideContent()
         },
-
 ```
 
 把方法传递给menubar
@@ -1582,7 +1530,6 @@ export default {
                 font-size: px2rem(16);
                 text-align: center;
             }
-
 ```
 
 子组件ContentView.vue
@@ -1654,7 +1601,6 @@ export default {
 
 </style>
 
-
 ```
 
 这里也很简单  先是循环navigation.toc  将目录标题部分打印出来     再使用 父组件的jumpto方法 跳转
@@ -1683,7 +1629,6 @@ export default {
 .slide-right-enter, .slide-right-leave-to {
     transform: translate3d(-100%, 0, 0);
   }
-
 ```
 
 
